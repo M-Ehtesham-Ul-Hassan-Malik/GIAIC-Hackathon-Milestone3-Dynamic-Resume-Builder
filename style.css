@@ -85,3 +85,13 @@ button:hover{
     color: #2c3e56;
 }
 
+.pic{
+    display: block;
+    margin: 0 auto;
+    border: #0056b3;
+    box-shadow: 0px 4px 8px rgba(65, 1, 183, 0.7);
+    border-radius: 500%;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+}

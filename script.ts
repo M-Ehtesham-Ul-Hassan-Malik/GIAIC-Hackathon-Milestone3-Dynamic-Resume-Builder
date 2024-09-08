@@ -7,6 +7,7 @@ window.addEventListener('DOMContentLoaded', () => {
         event.preventDefault();
 
         // Get the input values
+        const pic = (document.getElementById('pic') as HTMLInputElement);
         const name = (document.getElementById('name') as HTMLInputElement).value;
         const email = (document.getElementById('email') as HTMLInputElement).value;
         const phone = (document.getElementById('ph') as HTMLInputElement).value;
@@ -14,9 +15,15 @@ window.addEventListener('DOMContentLoaded', () => {
         const experience = (document.getElementById('experience') as HTMLTextAreaElement).value;
         const skills = (document.getElementById('skills') as HTMLTextAreaElement).value;
 
+
+        // pic element
+        const picFile = pic.files?.[0];
+        const picUrl = picFile ?URL.createObjectURL(picFile) : '';
+
         // Create the resume content
         const resumeContent = `
             <h2>Generated Resume</h2>
+            ${picUrl ? `<img src="${picUrl}" alt="Profile Picture" class="pic">` : ''}
             <p><strong>Name:</strong> ${name}</p>
             <p><strong>Email:</strong> ${email}</p>
             <p><strong>Phone:</strong> ${phone}</p>
